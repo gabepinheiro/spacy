@@ -1,0 +1,1 @@
+let default = () => <div>{`Hello from ReScript and Next.js`->React.string}</div>
