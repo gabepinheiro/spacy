@@ -9,7 +9,7 @@ type prop = {
 let default = props => {
     let {component, pageProps} = props
 
-    <div style={ReactDOM.Style.make(~border="solid 1px red", ())}>
+    <div>
         {React.createElement(component, pageProps)}
     </div>
 }

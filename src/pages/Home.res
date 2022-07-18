@@ -1,6 +1,12 @@
-let container = Emotion.css({
-  "border": "1px solid blue",
-  "fontSize": 42
-})
+open AncestorSpacy
 
-let default = () => <div className=container>{`Hello from ReScript and Next.js`->React.string}</div>
+let default = () => {
+  <Box p=[xs(4.0)] bgColor=[xs(#hex("#000"))]>
+    <Typography
+      color=[xs(#hex("#fafafa"))]
+      fontSize=[xs(#px(24))]
+    >
+      {`Styling with Ancestor`->React.string}
+    </Typography>
+  </Box>
+}
