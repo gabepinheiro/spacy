@@ -3,6 +3,8 @@ open AncestorSpacy
 type size = [#sm | #md]
 
 module Styles = {
+  open Theme
+
   let button = (~size) => Emotion.css({
     "height": switch size {
     | #sm => "42px"
@@ -12,9 +14,10 @@ module Styles = {
     | #sm => "14px"
     | #md => "16px"
     },
+    "fontFamily": Theme.Constants.fontFamily,
     "border": 0,
-    "backgroundColor": "#000",
-    "color": "#fff"
+    "backgroundColor": Colors.primary700->Colors.toString,
+    "color": Colors.primary100->Colors.toString,
   })
 }
 
