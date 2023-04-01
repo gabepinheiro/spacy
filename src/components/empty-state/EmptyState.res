@@ -13,7 +13,7 @@ let make = (~title, ~description) => {
         tag=#h1
         m=[xs(0.0)]
         textAlign=[xs(#center)]
-        color=[xs(Theme.Colors.primary700)]
+        color=[xs(#primary700)]
         fontSize=[xs(2.4->#rem)]
         fontWeight=[xs(#700)]
         letterSpacing=[xs(-0.03->#em)]
@@ -24,7 +24,7 @@ let make = (~title, ~description) => {
         tag=#p
         m=[xs(0.0)]
         textAlign=[xs(#center)]
-        color=[xs(Theme.Colors.primary200)]
+        color=[xs(#primary200)]
         fontSize=[xs(1.8->#rem)]
         fontWeight=[xs(#500)]
         letterSpacing=[xs(-0.03->#em)]

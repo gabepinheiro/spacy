@@ -1,27 +1,64 @@
 module Colors = {
-  let primary100 = #hex("#fafafa")
-  let primary200 = #hex("#b1b1b1")
-  let primary300 = #hex("#777777")
-  let primary400 = #hex("#4f4f4f")
-  let primary500 = #hex("#2c2c2c")
-  let primary600 = #hex("#1d1d1d")
-  let primary700 = #hex("#171717")
+  type t = [
+    | #primary100
+    | #primary200
+    | #primary300
+    | #primary400
+    | #primary500
+    | #primary600
+    | #primary700
+    | #red
+  ]
 
-  let red = #hex("#FF1E54")
+  let color = (color: t) =>
+    switch color {
+    | #primary100 => #hex("#fafafa")
+    | #primary200 => #hex("#b1b1b1")
+    | #primary300 => #hex("#777777")
+    | #primary400 => #hex("#4f4f4f")
+    | #primary500 => #hex("#2c2c2c")
+    | #primary600 => #hex("#1d1d1d")
+    | #primary700 => #hex("#171717")
+    | #red => #hex("#FF1E54")
+    }
 
-  let toString = Ancestor.Css.Color.toString
+  let make = (v: t) => v->color->Ancestor.Css.Color.toString
 }
 
 module ZIndex = {
-  let aboveAll = 100
-  let above = 50
-  let base = 10
-  let hidden = -1
+  type t = [
+    | #base
+    | #above
+    | #aboveAll
+    | #hidden
+  ]
+
+  let make = (v: t) =>
+    switch v {
+    | #aboveAll => 100
+    | #above => 50
+    | #base => 10
+    | #hidden => -1
+    }
 }
 
 module Constants = {
   let fontFamily = "DM Sans, sans-serif"
 }
 
-let spacing = AncestorSpacy.Styles.spacing
-let radius = AncestorSpacy.Styles.radius
+module Spacing = {
+  type t = float
+
+  let spacing = v => #pxFloat(v *. 8.0)
+  let make = v => v->spacing->Ancestor.Css.Length.toString
+}
+
+module Radius = {
+  type t = float
+
+  let radius = v => #pxFloat(v *. 8.0)
+  let make = v => v->radius->Ancestor.Css.Length.toString
+}
+
+let spacing = Spacing.make
+let radius = Radius.make
