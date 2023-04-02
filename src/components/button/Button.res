@@ -28,8 +28,8 @@ module Styles = {
       "fontFamily": Theme.Constants.fontFamily,
       "fontWeight": 700,
       "border": 0,
-      "color": #primary100->Colors.make,
-      "backgroundColor": #primary700->Colors.make,
+      "color": #primary100->colors,
+      "backgroundColor": #primary700->colors,
       "cursor": "pointer",
       "willChange": "background-color",
       "transition": transition,
@@ -39,7 +39,7 @@ module Styles = {
       "justifyContent": "center",
       "&:hover": {
         "transition": transition,
-        "backgroundColor": #primary500->Colors.make,
+        "backgroundColor": #primary500->colors,
       },
       "&:disabled": {
         "opacity": 0.3,

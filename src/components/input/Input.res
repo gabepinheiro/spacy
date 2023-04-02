@@ -12,16 +12,16 @@ module Styles = {
       "fontSize": `1.8rem`,
       "letterSpacing": "-0.02em",
       "fontWeight": 500,
-      "backgroundColor": Polished.transparentize(0.92, #primary600->Colors.make),
+      "backgroundColor": Polished.transparentize(0.92, #primary600->colors),
       "border": 0,
       "outline": 0,
       "borderRadius": radius(0.5),
       "color": switch error {
-      | None => #primary600->Colors.make
-      | Some(_) => #red->Colors.make
+      | None => #primary600->colors
+      | Some(_) => #red->colors
       },
       "&::placeholder": {
-        "color": #primary300->Colors.make,
+        "color": #primary300->colors,
       },
       "&:disabled": {
         "opacity": 0.7,
@@ -30,7 +30,7 @@ module Styles = {
     })
 
   let error = css({
-    "color": #red->Colors.make,
+    "color": #red->colors,
     "fontSize": `1.2rem`,
     "fontFamily": Constants.fontFamily,
     "fontWeight": 500,

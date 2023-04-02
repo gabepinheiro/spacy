@@ -17,24 +17,24 @@ module Styles = {
     "outline": 0,
     "background": "transparent",
     "cursor": "pointer",
-    "borderRadius": Theme.Radius.make(1.0),
-    "padding": `${Theme.Spacing.make(1.0)} ${Theme.Spacing.make(1.25)}`,
+    "borderRadius": Theme.radius(1.0),
+    "padding": `${Theme.spacing(1.0)} ${Theme.spacing(1.25)}`,
     "transition": "200ms background, 150ms box-shadow",
     "willChange": "background, box-shadow",
     "&:focus": {
       "transition": "150ms box-shadow",
-      "boxShadow": `0px 0px 0px 2px ${Theme.Colors.make(#primary200)}`,
+      "boxShadow": `0px 0px 0px 2px ${#primary200->Theme.colors}`,
     },
     "&:hover": {
       "transition": "200ms background",
-      "background": Theme.Colors.make(#primary200)->Polished.transparentize(0.8, _),
+      "background": #primary200->Theme.colors->Polished.transparentize(0.8, _),
     },
   })
 
   let content = Emotion.css({
-    "padding": Theme.Spacing.make(2.0),
-    "border": `solid 1px ${Theme.Colors.make(#primary200)->Polished.transparentize(0.5, _)}`,
-    "borderRadius": Theme.Radius.make(1.0),
+    "padding": Theme.spacing(2.0),
+    "border": `solid 1px ${#primary200->Theme.colors->Polished.transparentize(0.5, _)}`,
+    "borderRadius": Theme.radius(1.0),
     "display": "flex",
     "flex-direction": "column",
     "alignItems": "center",
@@ -53,8 +53,8 @@ module Styles = {
     "width": "100%",
     "outline": 0,
     "textDecoration": "none",
-    "color": Theme.Colors.make(#primary700),
-    "padding": Theme.Spacing.make(1.0),
+    "color": #primary700->Theme.colors,
+    "padding": Theme.spacing(1.0),
     "textAlign": "center",
     "display": "flex",
     "alignItems": "center",
@@ -62,17 +62,17 @@ module Styles = {
     "fontSize": 16,
     "fontWeight": 700,
     "letterSpacing": `-0.02em`,
-    "borderRadius": Theme.Radius.make(0.5),
+    "borderRadius": Theme.radius(0.5),
     "cursor": "pointer",
     "transition": "200ms background, 150ms box-shadow",
     "willChange": "background, box-shadow",
     "&:focus": {
       "transition": "150ms box-shadow",
-      "boxShadow": `0px 0px 0px 2px ${Theme.Colors.make(#primary200)}`,
+      "boxShadow": `0px 0px 0px 2px ${#primary200->Theme.colors}`,
     },
     "&:hover": {
       "transition": "200ms background",
-      "background": Theme.Colors.make(#primary200)->Polished.transparentize(0.8, _),
+      "background": #primary200->Theme.colors->Polished.transparentize(0.8, _),
     },
   })
 }
