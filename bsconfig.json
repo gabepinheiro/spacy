@@ -1,30 +1,32 @@
 {
-    "name": "spacy",
-    "namespace": false,
-    "reason": {
-      "react-jsx": 3
-    },
-    "bs-dependencies": [
-      "@rescript/react",
-      "@rescriptbr/ancestor",
-      "@rescriptbr/radix-ui",
-      "rescript-js",
-      "rescript-next"
-    ],
-    "ppx-flags": [],
-    "sources": [
-      {
-        "dir": "src",
-        "subdirs": true
-      }
-    ],
-    "package-specs": {
-      "module": "commonjs",
-      "in-source": true
-    },
-    "warnings": {
-      "error": "+8"
-    },
-    "suffix": ".bs.js",
-    "bsc-flags": ["-bs-g", "-bs-super-errors", "-open ReScriptJs.Js"]
-  }
+  "name": "spacy",
+  "namespace": false,
+  "reason": {
+    "react-jsx": 3
+  },
+  "bs-dependencies": [
+    "@rescript/react",
+    "@rescriptbr/ancestor",
+    "@rescriptbr/radix-ui",
+    "rescript-js",
+    "rescript-next",
+    "@rescriptbr/reform",
+    "@rescriptbr/reschema"
+  ],
+  "ppx-flags": ["lenses-ppx/ppx"],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "warnings": {
+    "error": "+8"
+  },
+  "suffix": ".bs.js",
+  "bsc-flags": ["-bs-g", "-bs-super-errors", "-open ReScriptJs.Js"]
+}
