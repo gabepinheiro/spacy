@@ -5,6 +5,7 @@ module FormFields = %lenses(
     username: string,
     email: string,
     password: string,
+    confirmPassword: string,
   }
 )
 
@@ -17,6 +18,10 @@ let formSchema = {
     nonEmpty(~error="Username is required.", Username),
     email(~error="Invalid email", Email),
     string(~min=8, Password),
+    custom(
+      state => state.password !== state.confirmPassword ? Error("Passwords not match") : Valid,
+      ConfirmPassword,
+    ),
   ])
 }
 
@@ -29,7 +34,7 @@ let make = () => {
   }
 
   let form = Form.use(
-    ~initialState={username: "", email: "", password: ""},
+    ~initialState={username: "", email: "", password: "", confirmPassword: ""},
     ~onSubmit=handleSubmit,
     ~validationStrategy=OnDemand,
     ~schema=formSchema,
@@ -76,6 +81,12 @@ let make = () => {
           placeholder="Password"
           onChange={handleChange(Password)}
           error=?{form.getFieldError(Field(Password))}
+        />
+        <Input
+          type_="password"
+          placeholder="Confirm password"
+          onChange={handleChange(ConfirmPassword)}
+          error=?{form.getFieldError(Field(ConfirmPassword))}
         />
       </Stack>
       <Button label="Sign up" onClick={handleSubmitClick} />
