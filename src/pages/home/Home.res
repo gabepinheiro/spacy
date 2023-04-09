@@ -21,7 +21,7 @@ let default = () => {
     <Stack gap=[xs(#one(8.0))] mt=[xs(14.0)] alignItems=[xs(#center)]>
       <Grid spacing=[xs(4.0)]>
         {fakeArticles->map((_, key) => {
-          <Box columns=[xs(#6)]>
+          <Box columns=[xs(#6)] key>
             <ArticleCard
               key
               title={`Toward a Journalistic Ethic of Citation`}
