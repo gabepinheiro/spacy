@@ -11,7 +11,9 @@ let make = (~children) => {
     <Stack
       maxW=[xs(1200->#px)] width=[xs(100.0->#pct)] height=[xs(100.0->#pct)] gap=[xs(#one(4.0))]>
       <Header />
-      <Box flexGrow=[xs(3.0->#num)]> children </Box>
+      <Box display=[xs(#flex)] justifyContent=[xs(#center)] flexGrow=[xs(3.0->#num)]>
+        children
+      </Box>
       <Footer />
     </Stack>
   </Box>
